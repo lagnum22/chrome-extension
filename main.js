@@ -12,7 +12,7 @@ const domBody = document.querySelector("div.body");
 const popUp = document.createElement("div");
 popUp.classList.add("pop-up");
 
-domBody.prepend(popUp);
+domBody.appendChild(popUp);
 
 //Goal 2: create a form for user to input data
 
@@ -38,23 +38,34 @@ header.appendChild(form);
 header.appendChild(submitButton);
 popUp.appendChild(header);
 //...eventually, create eventlistener for submit button, and then we use api
+const radioArray = document.getElementsByName("optradio");
 
 submitButton.addEventListener("click", (e) => {
   let string = textInput.value;
+  console.log("radio array: ", radioArray);
+  let rating = "g";
+  radioArray.forEach((setting) => {
+    if (setting.checked === true) {
+      rating = setting.value;
+    }
+  });
+  console.log("rating: ", rating);
   //alert(string);
-
+  //create randome number
+  let random = Math.floor(Math.random() * 25);
+  console.log("number ", random);
   //first arg of fetch is a url, in that url, there is a query string
   fetch(
-    `https://api.giphy.com/v1/gifs/search?api_key=Ko4SR2cn8W6ikTAtl0kkkcHDrGz8VE6f&q=${string}&limit=25&offset=0&rating=r&lang=en`
+    `https://api.giphy.com/v1/gifs/search?api_key=Ko4SR2cn8W6ikTAtl0kkkcHDrGz8VE6f&q=${string}&limit=25&offset=0&rating=${rating}&lang=en`
   )
     .then((data) => data.json())
     .then((memes) => {
-      console.log(memes.data[0]);
-      console.log("source: ", memes.data[0].images.original.mp4);
+      //console.log(memes.data[0]);
+      // console.log("source: ", memes.data[0].images.original.mp4);
       //create the image element
       const div = document.createElement("div");
       // div.innerHTML = memes.data[0].images.original.mp4;
-      let imgSourceStr = memes.data[0].images.original.url;
+      let imgSourceStr = memes.data[random].images.original.url;
       const img = document.createElement("img");
 
       img.src = imgSourceStr;

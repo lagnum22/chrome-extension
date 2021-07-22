@@ -1,6 +1,8 @@
 * {
   margin: 0;
   box-sizing: border-box;
+
+  font-size: large;
 }
 .pop-up {
   background-color: lightblue;
@@ -31,5 +33,10 @@
   height: 100%;
 }
 .return-gif {
+  width: 100%;
+  height: 100vh;
+}
+.radio {
+  background-color: bublanchedalmon;
   width: 100%;
 }
