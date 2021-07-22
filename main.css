@@ -6,8 +6,8 @@
 }
 .pop-up {
   background-color: lightblue;
-  height: 400px;
-  width: 400px;
+  height: 500px;
+  width: 500px;
   z-index: 500px;
   overflow-y: scroll;
 }
