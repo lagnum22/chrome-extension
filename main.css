@@ -36,6 +36,9 @@
   width: 100%;
   height: 100vh;
 }
+.return-gif:hover {
+  cursor: pointer;
+}
 .radio {
   background-color: bublanchedalmon;
   width: 100%;

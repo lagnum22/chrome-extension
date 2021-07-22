@@ -71,10 +71,25 @@ submitButton.addEventListener("click", (e) => {
       img.src = imgSourceStr;
       img.classList.add("return-gif");
       console.log(img);
-      //popUp.appendChild(div);
+      img.addEventListener("click", (e) => {
+        e.preventDefault;
+        console.log("image clicked");
+
+        // location.href = "./link.html";
+        chrome.tabs.create({
+          url: `https://www.google.com/search?q=${string}`,
+        });
+        // chrome.tabs.location.replace("wwww.google.com/");
+      });
       popUp.appendChild(img);
     });
 });
+
+// function copy() {
+//   const copyImg = document.querySelector("img");
+//   copyImg.select();
+//   document.exexCommand("copy");
+// }
 
 // =================Failed code==========================================
 // fetch(
