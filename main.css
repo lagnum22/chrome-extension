@@ -1,12 +1,36 @@
-.test-div {
-  background-color: cornsilk;
+.pop-up {
+  background-color: lightblue;
   height: 400px;
   width: 400px;
   z-index: 500px;
+  overflow-y: scroll;
 }
-
-.comment-box {
+.header {
+  background-color: lightcoral;
   width: 100%;
   height: 20%;
+  /* position: relative; */
+}
+.form {
+  width: 80%;
+  height: 100%;
   color: blanchedalmond;
+  display: inline-block;
+}
+
+.text-input {
+  width: 100%;
+  height: 100%;
+}
+.submit-button {
+  width: 20%;
+  height: 100%;
+  /* position: absolute;
+  top: 40px;
+  right: 100px; */
+  /* float: right; */
+  display: inline-block;
+}
+.return-gif {
+  width: 100%;
 }
