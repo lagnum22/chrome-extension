@@ -1,0 +1,12 @@
+.test-div {
+  background-color: cornsilk;
+  height: 400px;
+  width: 400px;
+  z-index: 500px;
+}
+
+.comment-box {
+  width: 100%;
+  height: 20%;
+  color: blanchedalmond;
+}
