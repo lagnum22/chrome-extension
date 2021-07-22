@@ -4,13 +4,14 @@ console.log("HELLLOOOOOOOOOO!1!");
 
 //Goal 1: to get element div that is 400px by 400px to appear on screen
 
-const popUp = document.createElement("div");
-popUp.classList.add("pop-up");
 //add sizing properties to element
 //append it to the body of whichever site we go to
 //create a variable to get documunt body
-const domBody = document.querySelector("body");
+const domBody = document.querySelector("div.body");
 //prepend the square to the body...it should affect the look of the page
+const popUp = document.createElement("div");
+popUp.classList.add("pop-up");
+
 domBody.prepend(popUp);
 
 //Goal 2: create a form for user to input data
@@ -40,11 +41,11 @@ popUp.appendChild(header);
 
 submitButton.addEventListener("click", (e) => {
   let string = textInput.value;
-  alert(string);
+  //alert(string);
 
   //first arg of fetch is a url, in that url, there is a query string
   fetch(
-    `https://api.giphy.com/v1/gifs/search?api_key=Ko4SR2cn8W6ikTAtl0kkkcHDrGz8VE6f&q=${string}&limit=25&offset=0&rating=g&lang=en`
+    `https://api.giphy.com/v1/gifs/search?api_key=Ko4SR2cn8W6ikTAtl0kkkcHDrGz8VE6f&q=${string}&limit=25&offset=0&rating=r&lang=en`
   )
     .then((data) => data.json())
     .then((memes) => {
